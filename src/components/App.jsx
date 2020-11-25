@@ -7,13 +7,13 @@ import CreateArea from "./CreateArea";
 function App() {
   const [items, setItems] = useState([]);
 
-  function handleClick(inputText, event) {
+  function addNote(inputText, event) {
     setItems((prevItems) => {
       return [...prevItems, inputText];
     });
     // setItems("");
   }
-  function onDelete(id) {
+  function deleteNote(id) {
     setItems((prevItems) => {
       return prevItems.filter(function (item, index) {
         return index !== id;
@@ -24,10 +24,10 @@ function App() {
   return (
     <div>
       <Header />
-      <CreateArea onAdd={handleClick} />
+      <CreateArea onAdd={addNote} />
       <Note note={{ title: "Hello", content: "This is content" }} />
       {items.map(function (item, index) {
-        return <Note key={index} id={index} note={item} delete={onDelete} />;
+        return <Note key={index} id={index} note={item} delete={deleteNote} />;
       })}
       <Footer />
     </div>
