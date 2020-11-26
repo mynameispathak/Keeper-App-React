@@ -26,7 +26,6 @@ function App() {
     <div>
       <Header />
       <CreateArea onAdd={addNote} />
-      <Note note={{ title: "Hello", content: "This is content" }} />
       {items.map(function (item, index) {
         const uID = uuidv4();
         return <Note key={uID} id={uID} note={item} delete={deleteNote} />;
