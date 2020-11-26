@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -27,7 +28,8 @@ function App() {
       <CreateArea onAdd={addNote} />
       <Note note={{ title: "Hello", content: "This is content" }} />
       {items.map(function (item, index) {
-        return <Note key={index} id={index} note={item} delete={deleteNote} />;
+        const uID = uuidv4();
+        return <Note key={uID} id={uID} note={item} delete={deleteNote} />;
       })}
       <Footer />
     </div>
