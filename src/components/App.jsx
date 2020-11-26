@@ -12,7 +12,6 @@ function App() {
     setItems((prevItems) => {
       return [...prevItems, inputText];
     });
-    // setItems("");
   }
   function deleteNote(id) {
     setItems((prevItems) => {
@@ -27,8 +26,9 @@ function App() {
       <Header />
       <CreateArea onAdd={addNote} />
       {items.map(function (item, index) {
-        const uID = uuidv4();
-        return <Note key={uID} id={uID} note={item} delete={deleteNote} />;
+        return (
+          <Note key={uuidv4()} id={index} note={item} delete={deleteNote} />
+        );
       })}
       <Footer />
     </div>

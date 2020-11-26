@@ -9,6 +9,8 @@ html {
 body {
   background: #eee;
   padding: 0 16px;
+  background-color: #6b5d44;
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
 }
 
 header {
@@ -61,7 +63,7 @@ footer p {
   margin-right: 10px;
   color: #f5ba13;
   border: none;
-  width: 65px;
+  width: 36px;
   height: 36px;
   cursor: pointer;
   outline: none;
